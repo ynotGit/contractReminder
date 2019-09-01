@@ -5,7 +5,7 @@ const Contracts = ({ contracts }) => {
     contracts.map((contract) => {
       return (
         <div key={contract.id}>
-          <span>{contract.contract}</span>
+          <span>{contract.company}</span>
           <span>{contract.endDate}</span>
         </div>
       );

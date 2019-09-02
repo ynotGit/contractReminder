@@ -7,11 +7,18 @@ class ContractItem extends Component {
       textDecoration: this.props.contract.completed ? "line-through" : "none"
     };
   };
+
   render() {
+    const { id, company } = this.props.contract;
     return (
       <div style={this.contractItemStyle()}>
-        <p>{this.props.contract.company}</p>
-        <p>{this.props.contract.endDate}</p>
+        <p>
+          <input
+            type="checkbox"
+            onChange={this.props.markComplete.bind(this, id)}
+          />{" "}
+          {company}
+        </p>
       </div>
     );
   }

@@ -5,7 +5,11 @@ import PropTypes from "prop-types";
 class Contracts extends Component {
   render() {
     return this.props.contracts.map((contract) => (
-      <ContractItem key={contract.id} contract={contract} />
+      <ContractItem
+        key={contract.id}
+        contract={contract}
+        markComplete={this.props.markComplete}
+      />
     ));
   }
 }

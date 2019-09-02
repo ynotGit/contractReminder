@@ -10,8 +10,15 @@ class App extends Component {
     ]
   };
 
-  markComplete = (id) => {
-    console.log(id);
+  toggleComplete = (id) => {
+    this.setState({
+      contracts: this.state.contracts.map((contract) => {
+        if (contract.id === id) {
+          contract.completed = !contract.completed;
+        }
+        return contract;
+      })
+    });
   };
 
   render() {
@@ -20,7 +27,7 @@ class App extends Component {
         <h1>Contract Reminder</h1>
         <Contracts
           contracts={this.state.contracts}
-          markComplete={this.markComplete}
+          toggleComplete={this.toggleComplete}
         />
       </div>
     );

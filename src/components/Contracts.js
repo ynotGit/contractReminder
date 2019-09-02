@@ -8,7 +8,7 @@ class Contracts extends Component {
       <ContractItem
         key={contract.id}
         contract={contract}
-        markComplete={this.props.markComplete}
+        toggleComplete={this.props.toggleComplete}
       />
     ));
   }

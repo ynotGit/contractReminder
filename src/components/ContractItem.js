@@ -9,15 +9,16 @@ class ContractItem extends Component {
   };
 
   render() {
-    const { id, company } = this.props.contract;
+    const { id, company, endDate } = this.props.contract;
     return (
       <div style={this.contractItemStyle()}>
         <p>
           <input
             type="checkbox"
-            onChange={this.props.markComplete.bind(this, id)}
-          />{" "}
+            onChange={this.props.toggleComplete.bind(this, id)}
+          />
           {company}
+          {endDate}
         </p>
       </div>
     );

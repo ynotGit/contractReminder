@@ -5,7 +5,7 @@ import "./App.css";
 class App extends Component {
   state = {
     contracts: [
-      { id: 1, company: "Sky", endDate: "01-01-2020", completed: false },
+      { id: 1, company: "Sky", endDate: "01-01-2020", completed: true },
       { id: 2, company: "EE", endDate: "02-01-2020", completed: false }
     ]
   };

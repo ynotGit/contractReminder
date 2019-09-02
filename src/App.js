@@ -3,6 +3,7 @@ import Contracts from './components/Contracts';
 import './App.css';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer'
+import AddContract from './components/AddContract';
 
 class App extends Component {
   state = {
@@ -34,13 +35,16 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Header />
-        <Contracts
-          contracts={this.state.contracts}
-          toggleComplete={this.toggleComplete}
-          deleteContract={this.deleteContract}
-        />
-        <Footer />
+        <div className="container">
+          <Header />
+          <AddContract />
+          <Contracts
+            contracts={this.state.contracts}
+            toggleComplete={this.toggleComplete}
+            deleteContract={this.deleteContract}
+          />
+          <Footer />
+        </div>
       </div>
     );
   }

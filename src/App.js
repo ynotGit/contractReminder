@@ -1,18 +1,20 @@
-import React, { Component } from "react";
-import Contracts from "./components/Contracts";
-import "./App.css";
+import React, { Component } from 'react';
+import Contracts from './components/Contracts';
+import './App.css';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer'
 
 class App extends Component {
   state = {
     contracts: [
-      { id: 1, company: "Sky", endDate: "01-01-2020", completed: false },
-      { id: 2, company: "EE", endDate: "02-01-2020", completed: false }
+      { id: 1, company: 'Sky', endDate: '01-01-2020', completed: false },
+      { id: 2, company: 'EE', endDate: '02-01-2020', completed: false }
     ]
   };
 
-  toggleComplete = (id) => {
+  toggleComplete = id => {
     this.setState({
-      contracts: this.state.contracts.map((contract) => {
+      contracts: this.state.contracts.map(contract => {
         if (contract.id === id) {
           contract.completed = !contract.completed;
         }
@@ -21,23 +23,24 @@ class App extends Component {
     });
   };
 
-  deleteContract = (id) => {
+  deleteContract = id => {
     this.setState({
       contracts: [
-        ...this.state.contracts.filter((contract) => contract.id !== id)
+        ...this.state.contracts.filter(contract => contract.id !== id)
       ]
     });
   };
 
   render() {
     return (
-      <div className="App">
-        <h1>Contract Reminder</h1>
+      <div className='App'>
+        <Header />
         <Contracts
           contracts={this.state.contracts}
           toggleComplete={this.toggleComplete}
           deleteContract={this.deleteContract}
         />
+        <Footer />
       </div>
     );
   }

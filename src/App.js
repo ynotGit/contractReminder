@@ -21,6 +21,14 @@ class App extends Component {
     });
   };
 
+  deleteContract = (id) => {
+    this.setState({
+      contracts: [
+        ...this.state.contracts.filter((contract) => contract.id !== id)
+      ]
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -28,6 +36,7 @@ class App extends Component {
         <Contracts
           contracts={this.state.contracts}
           toggleComplete={this.toggleComplete}
+          deleteContract={this.deleteContract}
         />
       </div>
     );

@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+const deleteButtonStyle = {
+  background: "red",
+  padding: "5px"
+};
+
 class ContractItem extends Component {
   contractItemStyle = () => {
     return {
@@ -19,6 +24,12 @@ class ContractItem extends Component {
           />
           {company}
           {endDate}
+          <button
+            onClick={this.props.deleteContract.bind(this, id)}
+            style={deleteButtonStyle}
+          >
+            x
+          </button>
         </p>
       </div>
     );

@@ -9,6 +9,7 @@ class Contracts extends Component {
         key={contract.id}
         contract={contract}
         toggleComplete={this.props.toggleComplete}
+        deleteContract={this.props.deleteContract}
       />
     ));
   }

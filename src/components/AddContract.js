@@ -15,7 +15,7 @@ class AddContract extends Component {
                     type="text"
                     name="company"
                     placeholder="Add Contact..."
-                    value={this.state.title}
+                    value={this.state.company}
                     onChange={this.onChange}
                 />
                 <input

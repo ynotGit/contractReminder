@@ -1,6 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class AddContract extends Component {
+
+    state = {
+        company: ''
+    }
+
+    onChange = (e) => this.setState({ company: e.target.value });
+
     render() {
         return (
             <form>
@@ -8,6 +15,8 @@ class AddContract extends Component {
                     type="text"
                     name="company"
                     placeholder="Add Contact..."
+                    value={this.state.title}
+                    onChange={this.onChange}
                 />
                 <input
                     type="submit"
@@ -15,7 +24,7 @@ class AddContract extends Component {
                     className="button"
                 />
             </form>
-        )
+        );
     }
 }
 

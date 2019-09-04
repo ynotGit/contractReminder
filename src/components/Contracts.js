@@ -1,22 +1,22 @@
-import React, { Component } from "react";
-import ContractItem from "./ContractItem";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import ContractItem from './ContractItem';
+import PropTypes from 'prop-types';
 
 class Contracts extends Component {
-  render() {
-    return this.props.contracts.map((contract) => (
-      <ContractItem
-        key={contract.id}
-        contract={contract}
-        toggleComplete={this.props.toggleComplete}
-        deleteContract={this.props.deleteContract}
-      />
-    ));
-  }
+    render() {
+        return this.props.contracts.map((contract) => (
+            <ContractItem
+                key={contract.id}
+                contract={contract}
+                toggleComplete={this.props.toggleComplete}
+                deleteContract={this.props.deleteContract}
+            />
+        ));
+    }
 }
 
 Contracts.propTypes = {
-  contracts: PropTypes.array.isRequired
+    contracts: PropTypes.array.isRequired
 };
 
 export default Contracts;

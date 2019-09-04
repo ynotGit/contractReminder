@@ -6,11 +6,17 @@ class AddContract extends Component {
         company: ''
     }
 
+    onSubmit = (e) => {
+        e.preventDefault();
+        this.props.addContract(this.state.company);
+        this.setState({ company: '' });
+    }
+
     onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.onSubmit}>
                 <input
                     type="text"
                     name="company"

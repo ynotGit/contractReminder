@@ -32,12 +32,23 @@ class App extends Component {
     });
   };
 
+  addContract = (company) => {
+    const newContract = {
+      id: //setId ,
+        company,
+      completed: false
+    }
+    this.setState({
+      contracts: [...this.state.contracts, newContract]
+    })
+  }
+
   render() {
     return (
-      <div className='App'>
+      <div className='App' >
         <div className="container">
           <Header />
-          <AddContract />
+          <AddContract addContract={this.addContract} />
           <Contracts
             contracts={this.state.contracts}
             toggleComplete={this.toggleComplete}

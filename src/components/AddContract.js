@@ -6,7 +6,7 @@ class AddContract extends Component {
         company: ''
     }
 
-    onChange = (e) => this.setState({ company: e.target.value });
+    onChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
     render() {
         return (

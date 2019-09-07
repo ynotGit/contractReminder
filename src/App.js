@@ -4,12 +4,13 @@ import './App.css';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer'
 import AddContract from './components/AddContract';
+import uuid from 'uuid';
 
 class App extends Component {
   state = {
     contracts: [
-      { id: 1, company: 'Sky', endDate: '01-01-2020', completed: false },
-      { id: 2, company: 'EE', endDate: '02-01-2020', completed: false }
+      { id: uuid.v4(), company: 'Sky', endDate: '01-01-2020', completed: false },
+      { id: uuid.v4(), company: 'EE', endDate: '02-01-2020', completed: false }
     ]
   };
 
@@ -34,8 +35,8 @@ class App extends Component {
 
   addContract = (company) => {
     const newContract = {
-      id: //setId ,
-        company,
+      id: uuid.v4(),
+      company,
       completed: false
     }
     this.setState({

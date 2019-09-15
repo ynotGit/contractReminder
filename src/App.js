@@ -10,7 +10,6 @@ class App extends Component {
   state = {
     contracts: [
       { id: uuid.v4(), company: 'Sky', endDate: '01-01-2020', completed: false },
-      { id: uuid.v4(), company: 'EE', endDate: '02-01-2020', completed: false }
     ]
   };
 
@@ -33,10 +32,11 @@ class App extends Component {
     });
   };
 
-  addContract = (company) => {
+  addContract = (company, endDate) => {
     const newContract = {
       id: uuid.v4(),
       company,
+      endDate,
       completed: false
     }
     this.setState({

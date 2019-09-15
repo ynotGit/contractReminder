@@ -3,13 +3,14 @@ import React, { Component } from 'react';
 class AddContract extends Component {
 
     state = {
-        company: ''
+        company: '',
+        endDate: ''
     }
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.addContract(this.state.company);
-        this.setState({ company: '' });
+        this.props.addContract(this.state.company, this.state.endDate);
+        this.setState({ company: '', endDate: '' });
     }
 
     onChange = (e) => this.setState({ [e.target.name]: e.target.value });
@@ -20,8 +21,15 @@ class AddContract extends Component {
                 <input
                     type="text"
                     name="company"
-                    placeholder="Add Contact..."
+                    placeholder="Add Contract..."
                     value={this.state.company}
+                    onChange={this.onChange}
+                />
+                <input
+                    type="text"
+                    name="endDate"
+                    placeholder="Contract End Date..."
+                    value={this.state.endDate}
                     onChange={this.onChange}
                 />
                 <input

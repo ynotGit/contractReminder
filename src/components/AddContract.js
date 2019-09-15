@@ -26,7 +26,7 @@ class AddContract extends Component {
                     onChange={this.onChange}
                 />
                 <input
-                    type="text"
+                    type="date"
                     name="endDate"
                     placeholder="Contract End Date..."
                     value={this.state.endDate}

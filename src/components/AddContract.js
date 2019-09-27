@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class AddContract extends Component {
-
     state = {
         company: '',
         endDate: ''

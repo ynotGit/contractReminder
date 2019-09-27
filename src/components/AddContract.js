@@ -31,6 +31,7 @@ class AddContract extends Component {
                     value={this.state.endDate}
                     onChange={this.onChange}
                 />
+
                 <input
                     type="submit"
                     value="submit"

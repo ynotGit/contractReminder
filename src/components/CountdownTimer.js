@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import Countdown from 'react-countdown-now';
 
-const Completionist = () => <span>You are good to go!</span>;
+const Completionist = () => <span>Contract has ended!</span>;
 
-const renderer = ({ hours, minutes, seconds, completed }) => {
+const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
-        // Render a completed state
         return <Completionist />;
     } else {
-        // Render a countdown
-        return <span>{hours}:{minutes}:{seconds}</span>;
+        return <span> Days Remaining: {days} | {hours}:{minutes}:{seconds} </span>;
     }
 };
 
@@ -17,7 +15,7 @@ class CountdownTimer extends Component {
     render() {
         return (
             <Countdown
-                date={Date.now() + 5000}
+                date={this.props.date}
                 renderer={renderer}
             />
         );

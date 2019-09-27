@@ -25,7 +25,7 @@ class ContractItem extends Component {
           />
           {company}
           {endDate}
-          <CountdownTimer />
+          <CountdownTimer date={endDate} />
           <button
             onClick={this.props.deleteContract.bind(this, id)}
             style={deleteButtonStyle}

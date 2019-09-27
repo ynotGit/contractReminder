@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import CountdownTimer from './CountdownTimer'
 
 const deleteButtonStyle = {
   background: "red",
@@ -24,6 +25,7 @@ class ContractItem extends Component {
           />
           {company}
           {endDate}
+          <CountdownTimer />
           <button
             onClick={this.props.deleteContract.bind(this, id)}
             style={deleteButtonStyle}

@@ -7,7 +7,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
         return <Completionist />;
     } else {
-        return <span> Days Remaining: {days} | {hours}:{minutes}:{seconds} </span>;
+        return <span> | Days Remaining: {days} | Hours: {hours} | Mins: {minutes} | Secs: {seconds} </span>;
     }
 };
 

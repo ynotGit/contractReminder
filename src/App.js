@@ -9,7 +9,7 @@ import uuid from 'uuid';
 class App extends Component {
   state = {
     contracts: [
-      { id: uuid.v4(), company: 'Sky', endDate: '01-01-2020', completed: false },
+      { id: uuid.v4(), company: 'Sky', endDate: '2020-01-01', completed: false },
     ]
   };
 

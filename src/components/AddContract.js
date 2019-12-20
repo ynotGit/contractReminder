@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 
 class AddContract extends Component {
-    state = {
-        company: '',
-        endDate: ''
-    }
+    state = {}
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.addContract(this.state.company, this.state.endDate);
-        this.setState({ company: '', endDate: '' });
+        const { company, endDate } = this.state;
+        this.props.addContract(company, endDate);
+        localStorage.setItem('company', company);
+        localStorage.setItem('endDate', endDate);
     }
 
     onChange = (e) => this.setState({ [e.target.name]: e.target.value });
